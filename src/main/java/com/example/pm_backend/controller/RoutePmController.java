@@ -42,12 +42,4 @@ public class RoutePmController {
 
         return ResponseEntity.status(400).build();
     }
-
-    @PostMapping("/create/recipe/all")
-    public ResponseEntity<RecipeModel[]> CreateAll(@RequestBody RecipeModel[] recipe){
-        for (RecipeModel recipeModel : recipe) {
-            recipeService.saveRecipe(recipeModel);
-        }
-            return ResponseEntity.status(201).body(recipe);
-    }
 }
